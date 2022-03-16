@@ -1,14 +1,35 @@
 <h1>Dashboard</h1>
-<ngx-charts-bar-vertical 
-    [view]="[1000,400]"
-    [results]="saleData"
-    [xAxisLabel]="'Products'"
-    [legendTitle]="'Product Sale Chart'"
-    [yAxisLabel]="'Sale'"
-    [legend]="true"
-    [showXAxisLabel]="true"
-    [showYAxisLabel]="true"
-    [xAxis]="true"
-    [yAxis]="true"
-    [gradient]="true">
-</ngx-charts-bar-vertical>
+<div class="row mt-3">
+    <div class="col-md-6 p-2">
+        <h2>Quantidade Vendas</h2>
+        <ngx-charts-bar-vertical
+        [view]="[500,400]"
+        [results]="quantsaleData"
+        [xAxisLabel]="'Datas'"
+        [legendTitle]="'Datas'"
+        [yAxisLabel]="'Quantidade'"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [gradient]="true">
+        </ngx-charts-bar-vertical>
+    </div>
+    <div class="col-md-6 p-2">
+        <h2>Por valor</h2>
+        <ngx-charts-bar-vertical 
+        [view]="[500,400]"
+        [results]="saleData"
+        [xAxisLabel]="'Datas'"
+        [legendTitle]="'Datas'"
+        [yAxisLabel]="'Valor'"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [gradient]="true">
+        </ngx-charts-bar-vertical>
+    </div>
+</div>
