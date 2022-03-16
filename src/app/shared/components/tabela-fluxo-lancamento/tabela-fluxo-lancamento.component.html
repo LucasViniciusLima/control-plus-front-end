@@ -1,0 +1,39 @@
+<div *ngIf="tipo === 'C'">
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr class="text-danger">
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Preço</th>
+        <th scope="col" class="text-right">Data compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fluxoCusto of lancamentos" class="text-danger">
+        <th scope="row">{{ fluxoCusto.nome | slice:0:27 }}{{ fluxoCusto.nome.length > 26 ? '...': ''}}</th>
+        <td>{{ fluxoCusto.tipo }}</td>
+        <td>{{ fluxoCusto.preco | currency: 'BRL' }}</td>
+        <td class="text-right">{{ fluxoCusto.data | date: "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="tipo === 'R'">
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr class="text-success">
+        <th scope="col">Nome</th>
+        <th scope="col">Preço</th>
+        <th scope="col" class="text-right">Data venda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fluxoReceita of lancamentos" class="text-success">
+        <th scope="row">{{ fluxoReceita.nome | slice:0:27 }} {{ fluxoReceita.nome.length > 26 ? '...': ''}}</th>
+        <td>{{ fluxoReceita.preco | currency: 'BRL' }}</td>
+        <td class="text-right">{{ fluxoReceita.data | date: "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

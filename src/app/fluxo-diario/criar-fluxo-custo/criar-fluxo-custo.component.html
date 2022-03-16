@@ -1,0 +1,30 @@
+<h1>Fluxo Custo</h1>
+
+<h3>Cadastro do custo</h3>
+<div class="form-row">
+  <div class="form-group col-md-3">
+    <label for="nome">Nome:</label>
+    <input id="nome" class="form-control" type="text" placeholder="conta de luz, cadeira, curso.."
+      [(ngModel)]="fluxoCusto.nome" />
+  </div>
+  <div class="form-group col-md-2">
+    <label for="preco">Preço:</label>
+    <input id="preco" class="form-control" type="number" placeholder="R$0,00" min="1" step="any"
+      [(ngModel)]="fluxoCusto.preco" />
+  </div>
+  <div class="form-group col-md-2">
+    <label for="tipo">Tipo:</label>
+    <select name="tipo" class="form-control" id="tipo" [(ngModel)]="fluxoCusto.tipo">
+      <option [ngValue]="0">Variável</option>
+      <option [ngValue]="1">Fixo</option>
+      <option [ngValue]="2">Investimento</option>
+    </select>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="data">Data compra:</label>
+    <input class="form-control" id="data" type="date" [(ngModel)]="fluxoCusto.data" />
+  </div>
+  <div class="form-group col-md-2 pt-4">
+    <a class="btn btn-primary btn-block mt-2" (click)="cadastrarCusto()">Cadastrar</a>
+  </div>
+</div>

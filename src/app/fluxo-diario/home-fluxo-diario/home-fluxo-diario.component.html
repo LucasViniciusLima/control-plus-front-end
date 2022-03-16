@@ -1,0 +1,31 @@
+<h1>Fluxo diario</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Fluxo de custos</h5>
+        <p class="card-text">Movimentação financeira de custos, compras, aluguéis e outras despesas.</p>
+        <a routerLink="criar-custo" class="btn btn-primary">Criar novo fluxo de custos</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Fluxo de receitas</h5>
+        <p class="card-text">Movimentação de receita, assinaturas, venda de produtos entre outros.</p>
+        <a routerLink="criar-receita" class="btn btn-primary">Criar novo fluxo de receitas</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row my-3">
+  <div class="col-md-6">
+    <tabela-fluxo-lancamento [lancamentos]="custos" [tipo]="'C'"> </tabela-fluxo-lancamento>
+  </div>
+
+  <div class="col-md-6">
+    <tabela-fluxo-lancamento [lancamentos]="receitas" [tipo]="'R'"> </tabela-fluxo-lancamento>
+  </div>
+</div>

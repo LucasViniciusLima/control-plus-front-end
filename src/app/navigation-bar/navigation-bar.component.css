@@ -1,0 +1,21 @@
+.n-item:hover{
+    color: rgb(255, 112, 46);    
+}
+.n-item{
+    color: #FFFFFF;
+}
+
+.my-navbar{
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 135px;
+}
+
+.router-link-active{
+    color: rgb(255, 112, 46);
+}
+
+@media only screen and (max-width: 1200px) {
+ 
+
+}
