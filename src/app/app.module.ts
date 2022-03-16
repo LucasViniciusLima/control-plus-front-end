@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    
+    BrowserAnimationsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]
