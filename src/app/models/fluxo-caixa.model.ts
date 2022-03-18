@@ -1,6 +1,6 @@
 export interface FluxoCaixa {
   nome: string;
   preco: number;
-  tipo: number;// 'RECEITA' | 'DESPESA'
+  tipo: string;// 'RECEITA' | 'DESPESA'
   data: Date;
 }

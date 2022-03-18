@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FluxoReceita } from 'src/app/models/fluxo-receita.model';
-import { FluxoReceitaService } from 'src/app/shared/services/fluxo-receita.service';
+import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
 
 @Component({
   selector: 'app-criar-fluxo-receita',
@@ -11,7 +11,7 @@ export class CriarFluxoReceitaComponent implements OnInit {
 
   fluxoReceita: FluxoReceita;
 
-  constructor(private readonly fluxoReceitaService: FluxoReceitaService) {
+  constructor(private readonly fluxoCaixaService: FluxoCaixaService) {
     this.fluxoReceita = new FluxoReceita('', 0, new Date());
   }
 
@@ -20,7 +20,11 @@ export class CriarFluxoReceitaComponent implements OnInit {
   }
 
   cadastrarReceita() {
-    this.fluxoReceitaService.criarFluxoReceita(this.fluxoReceita);
+    this.fluxoCaixaService
+      .criarFluxoReceita(this.fluxoReceita)
+      .subscribe(resp => {
+        history.back();//FIXME
+      });
   }
 
 }

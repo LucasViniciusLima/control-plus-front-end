@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FluxoCaixa } from 'src/app/models/fluxo-caixa.model';
-import { FluxoCustoService } from 'src/app/shared/services/fluxo-custo.service';
-import { FluxoReceitaService } from 'src/app/shared/services/fluxo-receita.service';
+import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
 
 @Component({
   selector: 'app-home-fluxo-diario',
@@ -14,15 +13,14 @@ export class HomeFluxoDiarioComponent implements OnInit {
   receitas: FluxoCaixa[] = [];
 
   constructor(
-    private fluxoReceitaService: FluxoReceitaService,
-    private fluxoCustoService: FluxoCustoService,
+    private fluxoCaixaService: FluxoCaixaService,
   ) { }
 
   ngOnInit(): void {
-    this.fluxoReceitaService.carregarFluxosReceitas()
+    this.fluxoCaixaService.carregarFluxosReceita()
       .subscribe((receitas: FluxoCaixa[]) => this.receitas = receitas)
 
-    this.fluxoCustoService.carregarFluxosCustos()
+    this.fluxoCaixaService.carregarFluxosCusto()
       .subscribe((custos: FluxoCaixa[]) => this.custos = custos)
   }
 

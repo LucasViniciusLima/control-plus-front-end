@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FluxoCusto } from 'src/app/models/fluxo-custo.model';
-import { FluxoCustoService } from 'src/app/shared/services/fluxo-custo.service';
+import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
 
 @Component({
   selector: 'app-criar-fluxo-custo',
@@ -11,15 +11,15 @@ export class CriarFluxoCustoComponent implements OnInit {
 
   fluxoCusto: FluxoCusto;
 
-  constructor(private readonly fluxoCustoService: FluxoCustoService) {
-    this.fluxoCusto = new FluxoCusto('', 0, 0, new Date());
+  constructor(private readonly fluxoCaixaService: FluxoCaixaService) {
+    this.fluxoCusto = new FluxoCusto('', 0, new Date());
   }
 
   ngOnInit(): void {
   }
 
   cadastrarCusto() {
-    this.fluxoCustoService
+    this.fluxoCaixaService
       .criarFluxoCusto(this.fluxoCusto)
       .subscribe(resp => {
         history.back();//FIXME
