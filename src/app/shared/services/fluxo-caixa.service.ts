@@ -18,17 +18,17 @@ export class FluxoCaixaService {
     return this.http.post(this.url, fluxocusto);
   }
 
-  carregarFluxosCusto(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url);
-  }
-
   criarFluxoReceita(fluxoReceita: FluxoReceita) {
     return this.http.post(this.url, fluxoReceita);
   }
 
+  carregarFluxosCusto(): Observable<FluxoCaixa[]> {
+    return this.http.get<FluxoCaixa[]>(this.url+`/custos`);
+  }
+
   carregarFluxosReceita(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url);
-  }//criar rota no back-end e adicionar aqui fluxo-caixa/receita e fluxo-caixa/custo
+    return this.http.get<FluxoCaixa[]>(this.url+`/receitas`);
+  }
 }
 
 

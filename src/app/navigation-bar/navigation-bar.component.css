@@ -3,12 +3,13 @@
 }
 .n-item{
     color: #FFFFFF;
+    border-bottom: 1px solid #343434;
 }
 
 .my-navbar{
     min-height: 100vh;
     max-height: 100vh;
-    width: 135px;
+    width: 120px;
 }
 
 .router-link-active{

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
+  imagemLogo: string = 'assets/img/fluxo-dinheiro.png';
   constructor() { }
 
   ngOnInit(): void {
