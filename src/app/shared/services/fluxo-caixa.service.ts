@@ -23,11 +23,39 @@ export class FluxoCaixaService {
   }
 
   carregarFluxosCusto(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url+`/custos`);
+    return this.http.get<FluxoCaixa[]>(this.url + `/custos`);
   }
 
   carregarFluxosReceita(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url+`/receitas`);
+    return this.http.get<FluxoCaixa[]>(this.url + `/receitas`);
+  }
+
+  getTotalCusto() {
+    let fluxoCusto: FluxoCusto[] = [];
+
+    this.carregarFluxosCusto().subscribe(custo=>fluxoCusto = custo);
+
+    let total = 0;
+
+    fluxoCusto.forEach(custo => {
+      total += custo.preco;
+    });
+
+    return total;
+  }
+
+  getTotalReceita() {
+    let fluxoReceita: FluxoReceita[] = [];
+    
+    this.carregarFluxosReceita().subscribe(receita=>fluxoReceita = receita);
+
+    let total = 0;
+
+    fluxoReceita.forEach(receita => {
+      total += receita.preco;
+    });
+
+    return total;
   }
 }
 

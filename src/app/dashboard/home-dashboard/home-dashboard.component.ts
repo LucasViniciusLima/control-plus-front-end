@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FluxoCusto } from 'src/app/models/fluxo-custo.model';
+import { FluxoReceita } from 'src/app/models/fluxo-receita.model';
+import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
 
 @Component({
   selector: 'app-home-dashboard',
@@ -24,10 +27,24 @@ export class HomeDashboardComponent implements OnInit {
     { name: "14/03", value: 1 },
   ];
 
+  fluxoCusto: FluxoCusto[] = [];
+  fluxoReceita: FluxoReceita[] = [];
+  comparativoCustoReceita: any[] = [];
 
-  constructor() { }
+  constructor(private readonly fluxoCaixaService: FluxoCaixaService) { }
 
   ngOnInit(): void {
+    this.fluxoCaixaService.carregarFluxosCusto()
+      .subscribe((custo) => this.fluxoCusto = custo);
+
+    this.fluxoCaixaService.carregarFluxosReceita()
+      .subscribe((receita) => this.fluxoReceita = receita);
+
+    this.comparativoCustoReceita = [
+      { name: 'custo', value: this.fluxoCaixaService.getTotalCusto() },
+      { name: 'receita', value: this.fluxoCaixaService.getTotalReceita() },
+    ]
   }
+
 
 }
