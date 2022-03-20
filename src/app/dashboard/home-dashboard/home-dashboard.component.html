@@ -1,16 +1,16 @@
 <h1>Dashboard</h1>
 <div class="row mt-3">
     <div class="col-md-8">        
-        <ngx-charts-advanced-pie-chart 
-        [results]="comparativoCustoReceita"
+        <ngx-charts-advanced-pie-chart
+        [results]="comparativoChart"
         [scheme]="'picnic'">
-        </ngx-charts-advanced-pie-chart>        
+        </ngx-charts-advanced-pie-chart>
     </div>
     <div class="col-md-4">
         <h2>Valor das Vendas</h2>
         <ngx-charts-bar-vertical 
         [view]="[350,280]"
-        [results]="saleData"
+        [results]="quantsaleData"
         [xAxisLabel]="'Datas'"
         [legendTitle]="'Datas'"
         [yAxisLabel]="'Valor'"

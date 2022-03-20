@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabelaFluxoLancamentoComponent } from './components/tabela-fluxo-lancamento/tabela-fluxo-lancamento.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const COMPONENTS = [
   TabelaFluxoLancamentoComponent
@@ -11,9 +12,10 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     FormsModule,
+    NgxChartsModule
   ],
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ],
   exports: [
     CommonModule,

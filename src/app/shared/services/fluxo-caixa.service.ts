@@ -22,41 +22,14 @@ export class FluxoCaixaService {
     return this.http.post(this.url, fluxoReceita);
   }
 
-  carregarFluxosCusto(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url + `/custos`);
+  carregarFluxosCusto(): Observable<any> {
+    return this.http.get<any>(this.url + `/custos`);
   }
 
-  carregarFluxosReceita(): Observable<FluxoCaixa[]> {
-    return this.http.get<FluxoCaixa[]>(this.url + `/receitas`);
+  carregarFluxosReceita(): Observable<any> {
+    return this.http.get<any>(this.url + `/receitas`);
   }
-
-  getTotalCusto() {
-    let fluxoCusto: FluxoCusto[] = [];
-
-    this.carregarFluxosCusto().subscribe(custo=>fluxoCusto = custo);
-
-    let total = 0;
-
-    fluxoCusto.forEach(custo => {
-      total += custo.preco;
-    });
-
-    return total;
-  }
-
-  getTotalReceita() {
-    let fluxoReceita: FluxoReceita[] = [];
-    
-    this.carregarFluxosReceita().subscribe(receita=>fluxoReceita = receita);
-
-    let total = 0;
-
-    fluxoReceita.forEach(receita => {
-      total += receita.preco;
-    });
-
-    return total;
-  }
+  
 }
 
 

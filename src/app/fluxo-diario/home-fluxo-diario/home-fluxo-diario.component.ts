@@ -18,10 +18,10 @@ export class HomeFluxoDiarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.fluxoCaixaService.carregarFluxosReceita()
-      .subscribe((receitas: FluxoCaixa[]) => this.receitas = receitas)
+      .subscribe((receitas: any) => this.receitas = receitas?.listaReceita);
 
     this.fluxoCaixaService.carregarFluxosCusto()
-      .subscribe((custos: FluxoCaixa[]) => this.custos = custos)
+      .subscribe((custos: any) => this.custos = custos?.listaCusto);
   }
 
 }

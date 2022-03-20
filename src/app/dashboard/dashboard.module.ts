@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FluxoCaixaService } from '../shared/services/fluxo-caixa.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [

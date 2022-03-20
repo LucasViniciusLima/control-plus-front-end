@@ -10,40 +10,41 @@ import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
 })
 export class HomeDashboardComponent implements OnInit {
   saleData = [
-    { name: "02/02", value: 10050 },//quantidade gasta naquele dia
-    { name: "13/02", value: 5500 },
-    { name: "14/02", value: 1000 },
-    { name: "11/03", value: 1900 },
-    { name: "12/03", value: 990 },
-    { name: "14/03", value: 10000 },
+    { name: "02/02", value: 1000050 },
+    { name: "13/02", value: 550000 },
+    { name: "14/02", value: 100000 },
+    { name: "11/03", value: 190000 },
+    { name: "12/03", value: 99000 },
+    { name: "14/03", value: 1000000 },
   ];
-
+  //os gráficos carregam normalmente se os dados forem apresentados aos mesmos de forma unica sem necessidade de mais de uma requisição
   quantsaleData = [
-    { name: "02/02", value: 5 },//quantidade de itens comprados
-    { name: "13/02", value: 10 },
-    { name: "14/02", value: 15 },
-    { name: "11/03", value: 8 },
-    { name: "12/03", value: 2 },
-    { name: "14/03", value: 1 },
+    { name: "02/02", value: 5000000 },
+    { name: "13/02", value: 10000 },
+    { name: "14/02", value: 15000 },
+    { name: "11/03", value: 800000 },
+    { name: "12/03", value: 20000 },
+    { name: "14/03", value: 100000 },
   ];
 
-  fluxoCusto: FluxoCusto[] = [];
-  fluxoReceita: FluxoReceita[] = [];
-  comparativoCustoReceita: any[] = [];
+  comparativoChart: Array<any> = [];
 
   constructor(private readonly fluxoCaixaService: FluxoCaixaService) { }
 
   ngOnInit(): void {
     this.fluxoCaixaService.carregarFluxosCusto()
-      .subscribe((custo) => this.fluxoCusto = custo);
+      .subscribe((custo) => {
+        this.comparativoChart.push({ name: 'Custos', value: custo?.total });
+        this.comparativoChart = [...this.comparativoChart];
+      });
 
     this.fluxoCaixaService.carregarFluxosReceita()
-      .subscribe((receita) => this.fluxoReceita = receita);
+      .subscribe((receita) => {
+        this.comparativoChart.push({ name: 'Receitas', value: receita?.total });
+        this.comparativoChart = [...this.comparativoChart];
+      });
 
-    this.comparativoCustoReceita = [
-      { name: 'custo', value: this.fluxoCaixaService.getTotalCusto() },
-      { name: 'receita', value: this.fluxoCaixaService.getTotalReceita() },
-    ]
+
   }
 
 
