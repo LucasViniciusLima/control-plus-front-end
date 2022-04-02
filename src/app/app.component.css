@@ -1,0 +1,13 @@
+
+
+@media (max-width: 1300px) {
+  .ml-ty-sc{
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+    .ml-ty-sc{
+      margin-left: 0px;
+    }
+}
