@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './auth/guards/auth-guard.service';
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './shared/services/auth.service';
 
 
 @NgModule({
