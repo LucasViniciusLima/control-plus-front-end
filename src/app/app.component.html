@@ -1,4 +1,4 @@
-<navigation-bar></navigation-bar>
+<navigation-bar *ngIf="authenticated"></navigation-bar>
 <div class="container p-md-5 ml-ty-sc">
   <router-outlet></router-outlet>
 </div>
