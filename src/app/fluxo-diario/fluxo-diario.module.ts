@@ -6,7 +6,6 @@ import { HomeFluxoDiarioComponent } from './home-fluxo-diario/home-fluxo-diario.
 import { FluxoDiarioRoutingModule } from './fluxo-diario-routing.module';
 import { CriarFluxoCustoComponent } from './criar-fluxo-custo/criar-fluxo-custo.component';
 import { CriarFluxoReceitaComponent } from './criar-fluxo-receita/criar-fluxo-receita.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FluxoCaixaService } from '../shared/services/fluxo-caixa.service';
 import { SharedModule } from '../shared/shared.module';
 
@@ -21,7 +20,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     FluxoDiarioRoutingModule,
-    HttpClientModule,
     SharedModule,
   ],
   providers: [
