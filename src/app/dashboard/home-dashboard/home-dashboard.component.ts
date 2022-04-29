@@ -32,7 +32,7 @@ export class HomeDashboardComponent implements OnInit {
   constructor(private readonly fluxoCaixaService: FluxoCaixaService) { }
 
   ngOnInit(): void {
-    this.fluxoCaixaService.carregarFluxosCusto()
+    /*this.fluxoCaixaService.carregarFluxosCusto()
       .subscribe((custo) => {
         this.comparativoChart.push({ name: 'Custos', value: custo?.total });
         this.comparativoChart = [...this.comparativoChart];
@@ -43,7 +43,7 @@ export class HomeDashboardComponent implements OnInit {
         this.comparativoChart.push({ name: 'Receitas', value: receita?.total });
         this.comparativoChart = [...this.comparativoChart];
       });
-
+*/
 
   }
 

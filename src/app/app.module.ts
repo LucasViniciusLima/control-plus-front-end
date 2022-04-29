@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './auth/guards/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthInterceptorProviders } from './shared/_helpers/auth.interceptor';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,  
     HttpClientModule      
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
