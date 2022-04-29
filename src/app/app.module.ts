@@ -11,6 +11,7 @@ import { AuthGuardService } from './auth/guards/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorProviders } from './shared/_helpers/auth.interceptor';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -23,8 +24,11 @@ import { AuthInterceptorProviders } from './shared/_helpers/auth.interceptor';
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    BrowserAnimationsModule,  
-    HttpClientModule      
+    BrowserAnimationsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {},
+    })
   ],
   providers: [AuthService, AuthGuardService, AuthInterceptorProviders],
   bootstrap: [AppComponent]
