@@ -4,15 +4,14 @@ import { HomeDashboardComponent } from './home-dashboard/home-dashboard.componen
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FluxoCaixaService } from '../shared/services/fluxo-caixa.service';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule,
     NgxChartsModule,
-    HttpClientModule
+    SharedModule
   ],
   declarations: [HomeDashboardComponent],
   providers: [FluxoCaixaService]

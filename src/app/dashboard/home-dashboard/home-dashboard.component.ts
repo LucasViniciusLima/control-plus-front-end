@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FluxoCaixa } from 'src/app/models/fluxo-caixa.model';
 import { FluxoCusto } from 'src/app/models/fluxo-custo.model';
 import { FluxoReceita } from 'src/app/models/fluxo-receita.model';
 import { FluxoCaixaService } from 'src/app/shared/services/fluxo-caixa.service';
@@ -29,22 +30,21 @@ export class HomeDashboardComponent implements OnInit {
 
   comparativoChart: Array<any> = [];
 
+
   constructor(private readonly fluxoCaixaService: FluxoCaixaService) { }
 
   ngOnInit(): void {
-    /*this.fluxoCaixaService.carregarFluxosCusto()
+    this.fluxoCaixaService.carregarFluxosCusto()
       .subscribe((custo) => {
-        this.comparativoChart.push({ name: 'Custos', value: custo?.total });
+        this.comparativoChart.push({ name: 'Custos', value: custo.total });
         this.comparativoChart = [...this.comparativoChart];
       });
 
     this.fluxoCaixaService.carregarFluxosReceita()
       .subscribe((receita) => {
-        this.comparativoChart.push({ name: 'Receitas', value: receita?.total });
+        this.comparativoChart.push({ name: 'Receitas', value: receita.total });
         this.comparativoChart = [...this.comparativoChart];
       });
-*/
-
   }
 
 
