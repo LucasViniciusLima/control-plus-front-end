@@ -1,53 +1,52 @@
 <h1>Dashboard</h1>
 <div class="row mt-3">
-    <div class="col-md-8">        
-        <ngx-charts-advanced-pie-chart
-        [results]="comparativoChart"
-        [scheme]="'picnic'">
+    <div class="col-md-8">
+        <ngx-charts-advanced-pie-chart [results]="comparativoChart" [scheme]="'picnic'">
         </ngx-charts-advanced-pie-chart>
     </div>
     <div class="col-md-4">
-        <h2>Valor das Vendas</h2>
-        <ngx-charts-bar-vertical 
-        [view]="[350,280]"
-        [results]="quantsaleData"
-        [xAxisLabel]="'Datas'"
-        [legendTitle]="'Datas'"
-        [yAxisLabel]="'Valor'"
-        [legend]="false"
-        [showXAxisLabel]="true"
-        [showYAxisLabel]="true"
-        [xAxis]="true"
-        [yAxis]="true"        
-        [scheme]="'flame'">
+        <h2>Quantidade Vendas</h2>
+        <ngx-charts-bar-vertical [view]="[350,280]" [results]="quantsaleData" [xAxisLabel]="'Datas'"
+            [legendTitle]="'Datas'" [yAxisLabel]="'Quantidade'" [legend]="false" [showXAxisLabel]="true"
+            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [scheme]="'picnic'">
         </ngx-charts-bar-vertical>
     </div>
 </div>
 <div class="row mt-3">
-    <div class="col-md-6 p-2">
-        <h2>Quantidade Vendas</h2>
-        <ngx-charts-bar-vertical
-        [view]="[350,280]"
-        [results]="quantsaleData"
-        [xAxisLabel]="'Datas'"
-        [legendTitle]="'Datas'"
-        [yAxisLabel]="'Quantidade'"
-        [legend]="false"
-        [showXAxisLabel]="true"
-        [showYAxisLabel]="true"
-        [xAxis]="true"
-        [yAxis]="true"
-        [scheme]="'fire'">
+    <div class="col-md-8 p-2">
+        <h2>Valor das Vendas</h2>
+        <ngx-charts-bar-vertical [view]="[350,280]" [results]="saleData" [xAxisLabel]="'Datas'" [legendTitle]="'Datas'"
+            [yAxisLabel]="'Valor'" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxis]="true"
+            [yAxis]="true" [scheme]="'picnic'">
         </ngx-charts-bar-vertical>
     </div>
-    <div class="col-md-6 p-2">
-        <ngx-charts-pie-chart 
-        [results]="saleData"
-        [legend]="false"
-        [legendTitle]="'Product Sale Report'" 
-        [view]="[350,280]"
-        [labels]="true" 
-        [scheme]="'flame'">
-        </ngx-charts-pie-chart>        
+    <div class="col-md-4 p-2">
+        <ngx-charts-pie-chart [results]="saleData" [legend]="false" [legendTitle]="'Product Sale Report'"
+            [view]="[350,280]" [labels]="true" [scheme]="'picnic'">
+        </ngx-charts-pie-chart>
+    </div>
+</div>
+<h1>Custos</h1>
+<div class="row mt-3">
+    <div class="col-md-8">
+        <h2>Quantidade Custos</h2>
+        <ngx-charts-bar-vertical [view]="[350,280]" [results]="quantCostData" [xAxisLabel]="'Datas'"
+            [legendTitle]="'Datas'" [yAxisLabel]="'Quantidade'" [legend]="false" [showXAxisLabel]="true"
+            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [scheme]="'fire'">
+        </ngx-charts-bar-vertical>
+    </div>
+    <div class="col-md-4">
+        <h2>Valor dos Custos</h2>
+        <ngx-charts-bar-vertical [view]="[350,280]" [results]="costData" [xAxisLabel]="'Datas'" [legendTitle]="'Datas'"
+            [yAxisLabel]="'Valor'" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxis]="true"
+            [yAxis]="true" [scheme]="'flame'">
+        </ngx-charts-bar-vertical>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-md-8 p-2">
+        <ngx-charts-pie-chart [results]="costData" [legend]="false" [legendTitle]="'Product Sale Report'"
+            [view]="[350,280]" [labels]="true" [scheme]="'flame'">
+        </ngx-charts-pie-chart>
     </div>
 </div>
