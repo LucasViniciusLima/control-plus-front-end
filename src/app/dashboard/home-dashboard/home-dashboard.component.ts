@@ -43,7 +43,7 @@ export class HomeDashboardComponent implements OnInit {
 
           if (indexDataEncontrada >= 0) {
             custoList[indexDataEncontrada].preco += itemReceita.preco;
-            custoList[indexDataEncontrada].value++;
+            quantCustoList[indexDataEncontrada].value++;
           } else {
             custoList.push(itemReceita);
             quantCustoList.push({ name: itemReceita.data, value: 1 });
