@@ -9,7 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';;
 export class AuthService {
 
   private readonly TOKEN_NAME = 'contr_auth'
-  private readonly url: string = `http://localhost:3000/api/v1/`;
+  private readonly url: string = `https://api-control-plus.herokuapp.com/api/v1/`;
   loggedUser: string = '';
 
   constructor(

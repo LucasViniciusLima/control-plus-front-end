@@ -9,7 +9,7 @@ import { FluxoReceita } from 'src/app/models/fluxo-receita.model';
 })
 export class FluxoCaixaService {
 
-  url: string = `http://localhost:3000/api/v1/fluxo-caixa`;
+  url: string = `https://api-control-plus.herokuapp.com/api/v1/fluxo-caixa`;
   
 
   constructor(private http: HttpClient) { }
