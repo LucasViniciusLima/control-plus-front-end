@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
+## Description
+
+Control Plus Front-End é uma aplicação Angular que serve como interface para o sistema de controle de fluxo de caixa. Permite aos usuários visualizar e gerenciar transações financeiras, com funcionalidades de autenticação e navegação intuitiva.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
